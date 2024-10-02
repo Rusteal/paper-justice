@@ -17,7 +17,8 @@ mpl.rc('text', usetex=True)
 # read in the data
 # get the tmp environment variable
 TMP = Path(os.environ.get('TMP'))
-IEC = Path(os.environ.get('IEC'))
+IEC = Path(os.environ.get('IEC')) # gets the value of IEC enviromental variable, error message idicates thatsuch variable does not exist, 
+# IEC look like path to a certain file or directory as i can see form line 108 and 112.
 df = pd.read_stata(os.path.join(TMP, "gender_coefplot.dta"))
 
 # convert coefficients to numeric
@@ -101,7 +102,8 @@ for p in ax.patches:
 ax.tick_params(axis="x", labelsize=26)
 ax.set_xlim([-0.2,1.1])
 ax.set_ylim([-0.8,12])
-ax.set_title("A: Female charged \% : Female population \%", fontsize=36, fontweight = "bold", color="black")
+ax.set_title("A: Female charged /% : Female population /%", fontsize=36, fontweight = "bold", color="black") # \ should not be used in a python string, 
+#cahnge to something else or delete
 
 # save figure
 plt.savefig(os.path.join(IEC, "output", "judicial_bias", "g_coef1.png"), bbox_inches="tight", dpi=150)

@@ -104,7 +104,7 @@ for p in ax.patches:
 ax.tick_params(axis="x", labelsize=26)
 ax.set_xlim([-0.01,0.08])
 ax.set_ylim([-0.8,12])
-ax.set_title("B: Female $-$ male acquittal \%", fontsize=36, fontweight = "bold", color="black")
+ax.set_title("B: Female $-$ male acquittal /%", fontsize=36, fontweight = "bold", color="black")
 
 # save figure
 plt.savefig(os.path.join(IEC, "output", "judicial_bias", "g_coef2.png"), bbox_inches="tight", dpi=150)
